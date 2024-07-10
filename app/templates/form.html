@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Generation</title>
+</head>
+<body>
+    <h1>Enter your prompt</h1>
+    <form method="post">
+        <textarea name="prompt" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="Generate Video">
+    </form>
+
+    {% if response %}
+        <h2>Response:</h2>
+        <p>{{ response }}</p>
+    {% endif %}
+
+    {% if video_path %}
+        <h2>Generated Video:</h2>
+        <video width="320" height="240" controls>
+            <source src="{{ url_for('static', path=video_path) }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    {% endif %}
+</body>
+</html>
