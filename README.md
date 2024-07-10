@@ -20,6 +20,14 @@ or
 
 pip3 install -r requirements.txt
 
+pip install diffusers transformers accelerate torch
+
+pip install git+https://github.com/huggingface/diffusers transformers accelerate
+
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+pip install opencv-python
+
 ### 3. Run the application using for mac
 
 uvicorn app.main:app --reload
