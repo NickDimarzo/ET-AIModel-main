@@ -1,10 +1,9 @@
 from fastapi import FastAPI, Request, Form
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
-from fastapi.staticfiles import StaticFiles  # Import StaticFiles
+from fastapi.staticfiles import StaticFiles
 from app.middleware.processPrompt import promptResponse
 import torch
-print(torch.cuda.is_available())
 from diffusers import DiffusionPipeline, DPMSolverMultistepScheduler
 from diffusers.utils import export_to_video
 import os
@@ -54,5 +53,11 @@ async def process_form(request: Request, prompt: str = Form(...)):
     with open(static_video_path, "wb") as f:
         f.write(video_data)
     
-    # Return the response with the video path adjusted to not duplicate the '/static' prefix
-    return templates.TemplateResponse("form.html", {"request": request, "response": newResponse, "video_path": "generated_video.mp4"})
+    # Log the static video path and check existence
+    print(f"Static video path: {static_video_path}")
+    print(f"File exists: {os.path.exists(static_video_path)}")
+
+    # Return the response with the video path
+    return templates.TemplateResponse("form.html", {"request": request, "response": newResponse, "video_path": "/static/generated_video.mp4"})
+
+
