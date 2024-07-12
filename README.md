@@ -1,7 +1,16 @@
 # FastAPI Application
 
 This is a FastAPI application that demonstrates basic usage.
-This was created by https://github.com/OAkinbode
+
+This was template was created by [Sola Akinbode](https://github.com/OAkinbode)
+
+We have altered the template to create videos using this [Hugging Face Algorithm](https://huggingface.co/ali-vilab/text-to-video-ms-1.7b)
+
+## Prerequisites
+
+Must have a CUDA compatible GPU (NVIDIA) and have CUDA installed on your system.
+
+You can find the installation [here](https://developer.nvidia.com/cuda-downloads)
 
 ## Installation
 
