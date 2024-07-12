@@ -1,6 +1,7 @@
 # FastAPI Application
 
 This is a FastAPI application that demonstrates basic usage.
+This was created by https://github.com/OAkinbode
 
 ## Installation
 
